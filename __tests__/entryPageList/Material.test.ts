@@ -40,18 +40,18 @@ describe('Material', () => {
       expect(result.length > 0).toBe(true)
     })
 
-    test('Get material entry page data list "[0].name", apply "Food, Talent Level-Up Material" filters, return "Philosophies of Diligence"', async () => {
+    test('Get material entry page data list "[0].name", apply "Potion" filters, return "Shocking Essential Oil"', async () => {
       const material = new Material()
-      const result = await material.getList(MaterialFilters.Type.Food, MaterialFilters.Type.TalentLevelUpMaterial)
+      const result = await material.getList(MaterialFilters.Type.Potion)
 
-      expect(result[0]?.name).toBe('Philosophies of Diligence')
+      expect(result[0]?.name).toBe('Shocking Essential Oil')
     })
 
-    test('Get material entry page data list "[0].entry_page_id", apply "Food, Talent Level-Up Material" filters, return "74"', async () => {
+    test('Get material entry page data list "[0].entry_page_id", apply "Potion" filters, return "732"', async () => {
       const material = new Material()
-      const result = await material.getList(MaterialFilters.Type.Food, MaterialFilters.Type.TalentLevelUpMaterial)
+      const result = await material.getList(MaterialFilters.Type.Potion)
 
-      expect(result[0]?.entry_page_id).toBe('74')
+      expect(result[0]?.entry_page_id).toBe('732')
     })
   })
 
