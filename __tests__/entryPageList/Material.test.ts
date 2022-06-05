@@ -33,13 +33,6 @@ import { Material, MaterialFilters } from '../../src'
 
 describe('Material', () => {
   describe('Material List', () => {
-    test('Get material entry page data list, return type "object"', async () => {
-      const material = new Material()
-      const result = await material.getList()
-
-      expect(typeof result).toBe('object')
-    }, 15000)
-
     test('Get material entry page data list, apply "Food, Talent Level-Up Material" filters, "length > 0" return "true"', async () => {
       const material = new Material()
       const result = await material.getList(MaterialFilters.Type.Food, MaterialFilters.Type.TalentLevelUpMaterial)
@@ -47,19 +40,19 @@ describe('Material', () => {
       expect(result.length > 0).toBe(true)
     })
 
-    test('Get material entry page data list "[0].name", return "The Miraculous Adventures of the Traveler"', async () => {
+    test('Get material entry page data list "[0].name", apply "Food, Talent Level-Up Material" filters, return "Philosophies of Diligence"', async () => {
       const material = new Material()
-      const result = await material.getList()
+      const result = await material.getList(MaterialFilters.Type.Food, MaterialFilters.Type.TalentLevelUpMaterial)
 
-      expect(result[0]?.name).toBe('The Miraculous Adventures of the Traveler')
-    }, 15000)
+      expect(result[0]?.name).toBe('Philosophies of Diligence')
+    })
 
-    test('Get material entry page data list "[0].entry_page_id", return "52"', async () => {
+    test('Get material entry page data list "[0].entry_page_id", apply "Food, Talent Level-Up Material" filters, return "74"', async () => {
       const material = new Material()
-      const result = await material.getList()
+      const result = await material.getList(MaterialFilters.Type.Food, MaterialFilters.Type.TalentLevelUpMaterial)
 
-      expect(result[0]?.entry_page_id).toBe('52')
-    }, 15000)
+      expect(result[0]?.entry_page_id).toBe('74')
+    })
   })
 
   describe('Material Total', () => {
@@ -76,28 +69,5 @@ describe('Material', () => {
 
       expect(result > 0).toBe(true)
     })
-  })
-
-  describe('Material Search', () => {
-    test('Search list by material name "Adeptus\' Temptation", "length > 0" return "true"', async () => {
-      const material = new Material()
-      const result = await material.searchListByName('Adeptus\' Temptation')
-
-      expect(result.length > 0).toBe(true)
-    }, 15000)
-
-    test('Search list by material name "Adeptus\' Temptation", get "[0].name", return "Adeptus\' Temptation"', async () => {
-      const material = new Material()
-      const result = await material.searchListByName('Adeptus\' Temptation')
-
-      expect(result[0]?.name).toBe('Adeptus\' Temptation')
-    }, 15000)
-
-    test('Search list by material name "Adeptus\' Temptation", get "[0].entry_page_id", return "271"', async () => {
-      const material = new Material()
-      const result = await material.searchListByName('Adeptus\' Temptation')
-
-      expect(result[0]?.entry_page_id).toBe('271')
-    }, 15000)
   })
 })
