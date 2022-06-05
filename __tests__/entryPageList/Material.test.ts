@@ -33,9 +33,9 @@ import { Material, MaterialFilters } from '../../src'
 
 describe('Material', () => {
   describe('Material List', () => {
-    test('Get material entry page data list, apply "Food, Talent Level-Up Material" filters, "length > 0" return "true"', async () => {
+    test('Get material entry page data list, apply "Potion" filters, "length > 0" return "true"', async () => {
       const material = new Material()
-      const result = await material.getList(MaterialFilters.Type.Food, MaterialFilters.Type.TalentLevelUpMaterial)
+      const result = await material.getList(MaterialFilters.Type.Potion)
 
       expect(result.length > 0).toBe(true)
     })
@@ -63,9 +63,9 @@ describe('Material', () => {
       expect(result > 0).toBe(true)
     })
 
-    test('Get material entry page data total, apply "Food, Talent Level-Up Material" filters, "result > 0" return "true"', async () => {
+    test('Get material entry page data total, apply "Potion" filters, "result > 0" return "true"', async () => {
       const material = new Material()
-      const result = await material.getTotal(MaterialFilters.Type.Food, MaterialFilters.Type.TalentLevelUpMaterial)
+      const result = await material.getTotal(MaterialFilters.Type.Potion)
 
       expect(result > 0).toBe(true)
     })
