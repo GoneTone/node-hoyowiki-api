@@ -2,7 +2,7 @@
 
 English | [繁體中文](README_ZH-TW.md) | [简体中文](README_ZH-CN.md)
 
-A unofficial [Node.js](https://nodejs.org/) library for [HoYoWiki](https://wiki.hoyolab.com/) API.
+A unofficial [Node.js](https://nodejs.org/) library for [HoYoWiki](https://wiki.hoyolab.com/) API, can get the details of [Genshin Impact](https://genshin.hoyoverse.com/) items!
 
 ## Report Issues
 
