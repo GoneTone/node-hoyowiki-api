@@ -2,7 +2,7 @@
 
 [English](README.md) | 繁體中文 | [简体中文](README_ZH-CN.md)
 
-[HoYoWiki](https://wiki.hoyolab.com/) API 非官方 [Node.js](https://nodejs.org/) 套件，可以取得原神項目的詳細資料！
+[HoYoWiki](https://wiki.hoyolab.com/) API 非官方 [Node.js](https://nodejs.org/) 套件，可以取得[原神](https://genshin.hoyoverse.com/)項目的詳細資料！
 
 ## 回報問題
 
