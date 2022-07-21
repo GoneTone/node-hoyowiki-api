@@ -33,6 +33,7 @@ import { axiosInstance } from '../utils/api'
 import { EntryPageMenu } from '../utils/constants'
 import type { EntryPageListData, EntryPageDataOptions } from '../interfaces/EntryPageListDataInterface'
 import type * as EntryPageListDataEnemyAPIInterface from '../interfaces/EntryPageListDataEnemyAPIInterface'
+import { HoYoWikiAPIError } from '../errors/HoYoWikiAPIError'
 
 export class Enemy implements EntryPageListData {
   /**
@@ -55,7 +56,7 @@ export class Enemy implements EntryPageListData {
 
     if (response.data?.retcode === 0) return response.data.data
 
-    throw new Error('Unable to get data.')
+    throw new HoYoWikiAPIError(response.data?.message || 'Unable to get enemy data.', response.data?.retcode)
   }
 
   /**

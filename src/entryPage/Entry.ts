@@ -35,6 +35,7 @@ import type { Page as WeaponPage } from '../interfaces/EntryPageDataWeaponAPIInt
 import type { Page as ArtifactPage } from '../interfaces/EntryPageDataArtifactAPIInterface'
 import type { Page as EnemyPage } from '../interfaces/EntryPageDataEnemyAPIInterface'
 import type { Page as MaterialPage } from '../interfaces/EntryPageDataMaterialAPIInterface'
+import { HoYoWikiAPIError } from '../errors/HoYoWikiAPIError'
 
 export class Entry {
   /**
@@ -51,9 +52,9 @@ export class Entry {
       }
     })
 
-    if (response.data?.retcode === 404) throw new Error('Entry ID is invalid.')
+    if (response.data?.retcode === 404) throw new HoYoWikiAPIError(`Entry ID "${entryId}" is invalid.`, response.data.retcode)
     if (response.data?.retcode === 0) return response.data.data.page
 
-    throw new Error('Unable to get data.')
+    throw new HoYoWikiAPIError(`Unable to get data, entry id: ${entryId}.`)
   }
 }

@@ -57,3 +57,5 @@ export * as EntryPageDataArtifactAPIInterface from './interfaces/EntryPageDataAr
 export * as EntryPageDataEnemyAPIInterface from './interfaces/EntryPageDataEnemyAPIInterface'
 export * as EntryPageDataMaterialAPIInterface from './interfaces/EntryPageDataMaterialAPIInterface'
 export * from './interfaces/MenuFiltersAPIInterface'
+
+export * from './errors/HoYoWikiAPIError'
