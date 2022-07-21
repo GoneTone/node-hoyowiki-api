@@ -35,7 +35,7 @@ const {
   Language
 } = require('@gonetone/hoyowiki-api')
 
-setLanguage(Language.ChineseTW).then(async () => {
+setLanguage(Language.ChineseCN).then(async () => {
   const character = new Character() // 角色
   // const weapon = new Weapon() // 武器
   // const artifact = new Artifact() // 圣遗物
@@ -73,7 +73,7 @@ const {
   Language
 } = require('@gonetone/hoyowiki-api')
 
-setLanguage(Language.ChineseTW).then(async () => {
+setLanguage(Language.ChineseCN).then(async () => {
   const entry = new Entry()
 
   const result = await entry.get(2252) // "2252" 是角色 "夜兰" 的 ID
@@ -84,6 +84,23 @@ setLanguage(Language.ChineseTW).then(async () => {
 
   const result3 = await entry.get(1319) // "1319" 是角色培养素材 "符纹之齿" 的 ID
   console.log(result3)
+})
+```
+
+关键字搜寻项目：
+
+```javascript
+const {
+  Search,
+  setLanguage,
+  Language
+} = require('@gonetone/hoyowiki-api')
+
+setLanguage(Language.ChineseCN).then(async () => {
+  const search = new Search()
+
+  const result = await search.get('夜')
+  console.log(result)
 })
 ```
 

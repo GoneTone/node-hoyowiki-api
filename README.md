@@ -35,7 +35,7 @@ const {
   Language
 } = require('@gonetone/hoyowiki-api')
 
-setLanguage(Language.ChineseTW).then(async () => {
+setLanguage(Language.EnglishUS).then(async () => {
   const character = new Character() // Character
   // const weapon = new Weapon() // Weapons
   // const artifact = new Artifact() // Artifacts
@@ -73,7 +73,7 @@ const {
   Language
 } = require('@gonetone/hoyowiki-api')
 
-setLanguage(Language.ChineseTW).then(async () => {
+setLanguage(Language.EnglishUS).then(async () => {
   const entry = new Entry()
 
   const result = await entry.get(2252) // "2252" is the ID of the character "Yelan"
@@ -84,6 +84,23 @@ setLanguage(Language.ChineseTW).then(async () => {
 
   const result3 = await entry.get(1319) // "1319" is the ID of the character level-up material "Runic Fang"
   console.log(result3)
+})
+```
+
+Keyword search items:
+
+```javascript
+const {
+  Search,
+  setLanguage,
+  Language
+} = require('@gonetone/hoyowiki-api')
+
+setLanguage(Language.EnglishUS).then(async () => {
+  const search = new Search()
+
+  const result = await search.get('yel')
+  console.log(result)
 })
 ```
 

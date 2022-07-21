@@ -87,6 +87,23 @@ setLanguage(Language.ChineseTW).then(async () => {
 })
 ```
 
+關鍵字搜尋項目：
+
+```javascript
+const {
+  Search,
+  setLanguage,
+  Language
+} = require('@gonetone/hoyowiki-api')
+
+setLanguage(Language.ChineseTW).then(async () => {
+  const search = new Search()
+
+  const result = await search.get('夜')
+  console.log(result)
+})
+```
+
 更改 API 語言：
 
 - `Language.EnglishUS` - English
