@@ -37,6 +37,8 @@ export * from './entryPageList/Material'
 
 export * from './entryPage/Entry'
 
+export * from './search/Search'
+
 export * from './filters/CharacterFilters'
 export * from './filters/WeaponFilters'
 export * from './filters/ArtifactFilters'
@@ -56,6 +58,7 @@ export * as EntryPageDataWeaponAPIInterface from './interfaces/EntryPageDataWeap
 export * as EntryPageDataArtifactAPIInterface from './interfaces/EntryPageDataArtifactAPIInterface'
 export * as EntryPageDataEnemyAPIInterface from './interfaces/EntryPageDataEnemyAPIInterface'
 export * as EntryPageDataMaterialAPIInterface from './interfaces/EntryPageDataMaterialAPIInterface'
-export * from './interfaces/MenuFiltersAPIInterface'
+export * as MenuFiltersAPIInterface from './interfaces/MenuFiltersAPIInterface'
+export * as SearchAPIInterface from './interfaces/SearchAPIInterface'
 
 export * from './errors/HoYoWikiAPIError'

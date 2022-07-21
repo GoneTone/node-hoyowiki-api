@@ -30,31 +30,26 @@
  */
 
 import { axiosInstance } from '../utils/api'
-import type { Page as CharacterPage } from '../interfaces/EntryPageDataCharacterAPIInterface'
-import type { Page as WeaponPage } from '../interfaces/EntryPageDataWeaponAPIInterface'
-import type { Page as ArtifactPage } from '../interfaces/EntryPageDataArtifactAPIInterface'
-import type { Page as EnemyPage } from '../interfaces/EntryPageDataEnemyAPIInterface'
-import type { Page as MaterialPage } from '../interfaces/EntryPageDataMaterialAPIInterface'
+import type * as SearchAPIInterface from '../interfaces/SearchAPIInterface'
 import { HoYoWikiAPIError } from '../errors/HoYoWikiAPIError'
 
-export class Entry {
+export class Search {
   /**
-   * Get Entry Page Data
+   * Get Search Data
    *
-   * @param {number} entryId Entry ID
+   * @param {string} keyword Keyword
    *
-   * @returns {Promise<CharacterPage | WeaponPage | ArtifactPage | EnemyPage | MaterialPage>}
+   * @returns {Promise<SearchAPIInterface.List[]>}
    */
-  public async get (entryId: number): Promise<CharacterPage | WeaponPage | ArtifactPage | EnemyPage | MaterialPage> {
-    const response = await axiosInstance.get('/entry_page', {
+  public async get (keyword: string): Promise<SearchAPIInterface.List[]> {
+    const response = await axiosInstance.get('/search', {
       params: {
-        entry_page_id: entryId
+        keyword
       }
     })
 
-    if (response.data?.retcode === 404) throw new HoYoWikiAPIError(`Entry ID "${entryId}" is invalid.`, response.data.retcode)
-    if (response.data?.retcode === 0) return response.data.data.page
+    if (response.data?.retcode === 0) return response.data.data.list
 
-    throw new HoYoWikiAPIError(`Unable to get data, entry id: ${entryId}.`, response.data?.retcode)
+    throw new HoYoWikiAPIError('Unable to get search data.', response.data?.retcode)
   }
 }
