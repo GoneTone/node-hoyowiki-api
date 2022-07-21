@@ -1,6 +1,6 @@
 {
   "name": "@gonetone/hoyowiki-api",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A unofficial Node.js library for HoYoWiki API, can get the details of Genshin Impact items!",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
