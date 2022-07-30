@@ -30,6 +30,7 @@ const {
   CharacterFilters, // 角色過濾器
   // WeaponFilters, // 武器過濾器
   // ArtifactFilters, // 聖遺物過濾器
+  // EnemyFilters, // 敵人與魔物過濾器
   // MaterialFilters, // 提瓦特產物過濾器
   setLanguage,
   Language

@@ -30,6 +30,7 @@ const {
   CharacterFilters, // Character Filters
   // WeaponFilters, // Weapons Filters
   // ArtifactFilters, // Artifacts Filters
+  // EnemyFilters, // Enemies and Monsters Filters
   // MaterialFilters, // Teyvat's Resources Filters
   setLanguage,
   Language

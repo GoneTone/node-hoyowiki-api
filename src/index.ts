@@ -42,6 +42,7 @@ export * from './search/Search'
 export * from './filters/CharacterFilters'
 export * from './filters/WeaponFilters'
 export * from './filters/ArtifactFilters'
+export * from './filters/EnemyFilters'
 export * from './filters/MaterialFilters'
 
 export * from './utils/api'

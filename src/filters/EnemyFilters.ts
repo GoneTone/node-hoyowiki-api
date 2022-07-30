@@ -29,40 +29,40 @@
  * GitHub: https://github.com/GoneTone/node-hoyowiki-api
  */
 
-import axios from 'axios'
-import { DefaultApiOptions, Language } from './constants'
-import { CharacterFilters } from '../filters/CharacterFilters'
-import { WeaponFilters } from '../filters/WeaponFilters'
-import { ArtifactFilters } from '../filters/ArtifactFilters'
-import { EnemyFilters } from '../filters/EnemyFilters'
-import { MaterialFilters } from '../filters/MaterialFilters'
+import { axiosInstance } from '../utils/api'
+import { EntryPageMenu } from '../utils/constants'
+import type * as MenuFiltersAPIInterface from '../interfaces/MenuFiltersAPIInterface'
 
-export const axiosInstance = axios.create({
-  baseURL: DefaultApiOptions.API,
-  headers: {
-    'User-Agent': DefaultApiOptions.UserAgent
+export class EnemyFilters {
+  public static Type = {
+    OtherHumanFactions: '1307',
+    Automatons: '1326',
+    Fatui: '1329',
+    EnemiesOfNote: '1345',
+    Hilichurls: '1359',
+    ElementalLifeforms: '1368',
+    TheAbyss: '1381',
+    MysticalBeasts: '1402'
   }
-})
-axiosInstance.defaults.headers.common['x-rpc-language'] = Language.EnglishUS
 
-/**
- * Set Language.
- *
- * @param {Language} language Language Code
- */
-export async function setLanguage (language: Language): Promise<void> {
-  axiosInstance.defaults.headers.common['x-rpc-language'] = language
+  public static async setFilterIds (): Promise<void> {
+    const response = await axiosInstance.get('/get_menu_filters', {
+      params: {
+        menu_id: EntryPageMenu.Enemy
+      }
+    })
 
-  await CharacterFilters.setFilterIds()
-  await WeaponFilters.setFilterIds()
-  await ArtifactFilters.setFilterIds()
-  await EnemyFilters.setFilterIds()
-  await MaterialFilters.setFilterIds()
-}
+    const filters: MenuFiltersAPIInterface.Filter[] = response.data.data.filters
 
-/**
- * Get Set Language.
- */
-export function getSetLanguage (): string {
-  return axiosInstance.defaults.headers.common['x-rpc-language'] as string
+    this.Type = {
+      OtherHumanFactions: filters[0]?.values[0]?.id ?? '1307',
+      Automatons: filters[0]?.values[1]?.id ?? '1326',
+      Fatui: filters[0]?.values[2]?.id ?? '1329',
+      EnemiesOfNote: filters[0]?.values[3]?.id ?? '1345',
+      Hilichurls: filters[0]?.values[4]?.id ?? '1359',
+      ElementalLifeforms: filters[0]?.values[5]?.id ?? '1368',
+      TheAbyss: filters[0]?.values[6]?.id ?? '1381',
+      MysticalBeasts: filters[0]?.values[7]?.id ?? '1402'
+    }
+  }
 }

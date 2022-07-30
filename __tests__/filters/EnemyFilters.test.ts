@@ -29,40 +29,40 @@
  * GitHub: https://github.com/GoneTone/node-hoyowiki-api
  */
 
-import axios from 'axios'
-import { DefaultApiOptions, Language } from './constants'
-import { CharacterFilters } from '../filters/CharacterFilters'
-import { WeaponFilters } from '../filters/WeaponFilters'
-import { ArtifactFilters } from '../filters/ArtifactFilters'
-import { EnemyFilters } from '../filters/EnemyFilters'
-import { MaterialFilters } from '../filters/MaterialFilters'
+import { EnemyFilters, setLanguage, Language } from '../../src'
 
-export const axiosInstance = axios.create({
-  baseURL: DefaultApiOptions.API,
-  headers: {
-    'User-Agent': DefaultApiOptions.UserAgent
-  }
+describe('Material Filters', () => {
+  describe('Material Filters Default Data', () => {
+    test('Valid "Type" material filters data', () => {
+      expect(EnemyFilters.Type).toStrictEqual({
+        OtherHumanFactions: '1307',
+        Automatons: '1326',
+        Fatui: '1329',
+        EnemiesOfNote: '1345',
+        Hilichurls: '1359',
+        ElementalLifeforms: '1368',
+        TheAbyss: '1381',
+        MysticalBeasts: '1402'
+      })
+    })
+  })
+
+  describe('Material Filters Data, Set Language "ChineseTW"', () => {
+    test('Set language "ChineseTW"', async () => {
+      await setLanguage(Language.ChineseTW)
+    })
+
+    test('Valid "Type" material filters data, set language "ChineseTW"', () => {
+      expect(EnemyFilters.Type).toStrictEqual({
+        OtherHumanFactions: '1313',
+        Automatons: '1314',
+        Fatui: '1328',
+        EnemiesOfNote: '1344',
+        Hilichurls: '1354',
+        ElementalLifeforms: '1367',
+        TheAbyss: '1388',
+        MysticalBeasts: '1401'
+      })
+    })
+  })
 })
-axiosInstance.defaults.headers.common['x-rpc-language'] = Language.EnglishUS
-
-/**
- * Set Language.
- *
- * @param {Language} language Language Code
- */
-export async function setLanguage (language: Language): Promise<void> {
-  axiosInstance.defaults.headers.common['x-rpc-language'] = language
-
-  await CharacterFilters.setFilterIds()
-  await WeaponFilters.setFilterIds()
-  await ArtifactFilters.setFilterIds()
-  await EnemyFilters.setFilterIds()
-  await MaterialFilters.setFilterIds()
-}
-
-/**
- * Get Set Language.
- */
-export function getSetLanguage (): string {
-  return axiosInstance.defaults.headers.common['x-rpc-language'] as string
-}
