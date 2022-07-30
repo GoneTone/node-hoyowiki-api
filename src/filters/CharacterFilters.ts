@@ -47,7 +47,11 @@ export class CharacterFilters {
   public static Region = {
     Mondstadt: '27',
     LiyueHarbor: '43',
-    InazumaCity: '60'
+    InazumaCity: '60',
+    Snezhnaya: '1414',
+    Sumeru: '1418',
+    Fontaine: '1434',
+    Natlan: '1450'
   }
 
   public static Quality = {
@@ -103,7 +107,11 @@ export class CharacterFilters {
     this.Region = {
       Mondstadt: filters[1]?.values[0]?.id ?? '27',
       LiyueHarbor: filters[1]?.values[1]?.id ?? '43',
-      InazumaCity: filters[1]?.values[2]?.id ?? '60'
+      InazumaCity: filters[1]?.values[2]?.id ?? '60',
+      Snezhnaya: filters[1]?.values[3]?.id ?? '1414',
+      Sumeru: filters[1]?.values[4]?.id ?? '1418',
+      Fontaine: filters[1]?.values[5]?.id ?? '1434',
+      Natlan: filters[1]?.values[6]?.id ?? '1450'
     }
     this.Quality = {
       Star5: filters[2]?.values[0]?.id ?? '3',

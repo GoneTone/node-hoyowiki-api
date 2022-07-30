@@ -49,7 +49,11 @@ describe('Character Filters', () => {
       expect(CharacterFilters.Region).toStrictEqual({
         Mondstadt: '27',
         LiyueHarbor: '43',
-        InazumaCity: '60'
+        InazumaCity: '60',
+        Snezhnaya: '1414',
+        Sumeru: '1418',
+        Fontaine: '1434',
+        Natlan: '1450'
       })
     })
 
@@ -113,7 +117,11 @@ describe('Character Filters', () => {
       expect(CharacterFilters.Region).toStrictEqual({
         Mondstadt: '39',
         LiyueHarbor: '49',
-        InazumaCity: '59'
+        InazumaCity: '59',
+        Snezhnaya: '1405',
+        Sumeru: '1430',
+        Fontaine: '1433',
+        Natlan: '1449'
       })
     })
 
