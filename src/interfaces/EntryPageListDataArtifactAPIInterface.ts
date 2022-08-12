@@ -30,14 +30,14 @@
  */
 
 export interface DisplayField {
-  circlet_of_logos_icon_url: string;
-  sands_of_eon_icon_url: string;
-  plume_of_death_icon_url: string;
   goblet_of_eonothem_icon_url: string;
   flower_of_life_icon_url: string;
   four_set_effect: string;
   two_set_effect: string;
   single_set_effect: string;
+  circlet_of_logos_icon_url: string;
+  sands_of_eon_icon_url: string;
+  plume_of_death_icon_url: string;
 }
 
 export interface ReliquaryEffect {

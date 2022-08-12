@@ -33,7 +33,12 @@ export interface DisplayField {
   drop_materials: string;
 }
 
+export interface EnemyAndMonsterType {
+  values: string[];
+}
+
 export interface FilterValues {
+  enemy_and_monster_type: EnemyAndMonsterType;
 }
 
 export interface List {

@@ -32,19 +32,7 @@
 export interface DisplayField {
 }
 
-export interface CharacterVision {
-  values: string[];
-}
-
 export interface CharacterRegion {
-  values: string[];
-}
-
-export interface CharacterProperty {
-  values: string[];
-}
-
-export interface CharacterWeapon {
   values: string[];
 }
 
@@ -52,12 +40,24 @@ export interface CharacterRarity {
   values: string[];
 }
 
+export interface CharacterWeapon {
+  values: string[];
+}
+
+export interface CharacterProperty {
+  values: string[];
+}
+
+export interface CharacterVision {
+  values: string[];
+}
+
 export interface FilterValues {
-  character_vision: CharacterVision;
   character_region: CharacterRegion;
-  character_property: CharacterProperty;
-  character_weapon: CharacterWeapon;
   character_rarity: CharacterRarity;
+  character_weapon: CharacterWeapon;
+  character_property: CharacterProperty;
+  character_vision: CharacterVision;
 }
 
 export interface List {

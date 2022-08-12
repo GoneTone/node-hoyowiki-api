@@ -32,10 +32,6 @@
 export interface DisplayField {
 }
 
-export interface WeaponRarity {
-  values: string[];
-}
-
 export interface WeaponType {
   values: string[];
 }
@@ -44,10 +40,14 @@ export interface WeaponProperty {
   values: string[];
 }
 
+export interface WeaponRarity {
+  values: string[];
+}
+
 export interface FilterValues {
-  weapon_rarity: WeaponRarity;
   weapon_type: WeaponType;
   weapon_property: WeaponProperty;
+  weapon_rarity: WeaponRarity;
 }
 
 export interface List {

@@ -38,12 +38,12 @@ export interface Component {
 
 export interface Module {
   name: string;
-  has_edit_permission: boolean;
   is_poped: boolean;
   components: Component[];
+  id: string;
 }
 
-export interface WeaponProperty {
+export interface WeaponType {
   values: string[];
 }
 
@@ -51,14 +51,14 @@ export interface WeaponRarity {
   values: string[];
 }
 
-export interface WeaponType {
+export interface WeaponProperty {
   values: string[];
 }
 
 export interface FilterValues {
-  weapon_property: WeaponProperty;
-  weapon_rarity: WeaponRarity;
   weapon_type: WeaponType;
+  weapon_rarity: WeaponRarity;
+  weapon_property: WeaponProperty;
 }
 
 export interface Page {
@@ -71,6 +71,8 @@ export interface Page {
   filter_values: FilterValues;
   menu_id: string;
   menu_name: string;
+  version: string;
+  langs: string[];
 }
 
 export interface Data {

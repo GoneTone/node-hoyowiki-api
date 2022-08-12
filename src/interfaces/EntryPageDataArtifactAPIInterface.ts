@@ -38,9 +38,9 @@ export interface Component {
 
 export interface Module {
   name: string;
-  has_edit_permission: boolean;
   is_poped: boolean;
   components: Component[];
+  id: string;
 }
 
 export interface ReliquaryEffect {
@@ -61,6 +61,8 @@ export interface Page {
   filter_values: FilterValues;
   menu_id: string;
   menu_name: string;
+  version: string;
+  langs: string[];
 }
 
 export interface Data {

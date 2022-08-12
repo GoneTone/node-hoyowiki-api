@@ -38,13 +38,9 @@ export interface Component {
 
 export interface Module {
   name: string;
-  has_edit_permission: boolean;
   is_poped: boolean;
   components: Component[];
-}
-
-export interface CharacterProperty {
-  values: string[];
+  id: string;
 }
 
 export interface CharacterRegion {
@@ -55,20 +51,24 @@ export interface CharacterWeapon {
   values: string[];
 }
 
-export interface CharacterVision {
-  values: string[];
-}
-
 export interface CharacterRarity {
   values: string[];
 }
 
+export interface CharacterProperty {
+  values: string[];
+}
+
+export interface CharacterVision {
+  values: string[];
+}
+
 export interface FilterValues {
-  character_property: CharacterProperty;
   character_region: CharacterRegion;
   character_weapon: CharacterWeapon;
-  character_vision: CharacterVision;
   character_rarity: CharacterRarity;
+  character_property: CharacterProperty;
+  character_vision: CharacterVision;
 }
 
 export interface Page {
@@ -81,6 +81,8 @@ export interface Page {
   filter_values: FilterValues;
   menu_id: string;
   menu_name: string;
+  version: string;
+  langs: string[];
 }
 
 export interface Data {
