@@ -27,11 +27,18 @@ const {
   // Artifact, // 圣遗物
   // Enemy, // 敌人与魔物
   // Material, // 提瓦特产物
+  // Npc, // NPC图鉴
+  // Animal, // 野生动物
+  // Book, // 书籍
+  // Tutorial, // 教程
   CharacterFilters, // 角色过滤器
   // WeaponFilters, // 武器过滤器
   // ArtifactFilters, // 圣遗物过滤器
   // EnemyFilters, // 敌人与魔物过滤器
   // MaterialFilters, // 提瓦特产物过滤器
+  // NpcFilters, // NPC图鉴过滤器
+  // AnimalFilters, // 野生动物过滤器
+  // TutorialFilters, // 教程过滤器
   setLanguage,
   Language
 } = require('@gonetone/hoyowiki-api')
@@ -42,6 +49,10 @@ setLanguage(Language.ChineseCN).then(async () => {
   // const artifact = new Artifact() // 圣遗物
   // const enemy = new Enemy() // 敌人与魔物
   // const material = new Material() // 提瓦特产物
+  // const npc = new Npc() // NPC图鉴
+  // const animal = new Animal() // 野生动物
+  // const book = new Book() // 书籍
+  // const tutorial = new Tutorial() // 教程
 
   /* 所有原神角色资料列表 */
   const result = await character.getList()

@@ -27,11 +27,18 @@ const {
   // Artifact, // Artifacts
   // Enemy, // Enemies and Monsters
   // Material, // Teyvat's Resources
+  // Npc, // NPC Archive
+  // Animal, // Wildlife
+  // Book, // Books
+  // Tutorial, // Tutorial
   CharacterFilters, // Character Filters
   // WeaponFilters, // Weapons Filters
   // ArtifactFilters, // Artifacts Filters
   // EnemyFilters, // Enemies and Monsters Filters
   // MaterialFilters, // Teyvat's Resources Filters
+  // NpcFilters, // NPC Archive Filters
+  // AnimalFilters, // Wildlife Filters
+  // TutorialFilters, // Tutorial Filters
   setLanguage,
   Language
 } = require('@gonetone/hoyowiki-api')
@@ -42,6 +49,10 @@ setLanguage(Language.EnglishUS).then(async () => {
   // const artifact = new Artifact() // Artifacts
   // const enemy = new Enemy() // Enemies and Monsters
   // const material = new Material() // Teyvat's Resources
+  // const npc = new Npc() // NPC Archive
+  // const animal = new Animal() // Wildlife
+  // const book = new Book() // Books
+  // const tutorial = new Tutorial() // Tutorial
 
   /* All Genshin Impact character data list */
   const result = await character.getList()

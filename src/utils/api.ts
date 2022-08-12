@@ -36,6 +36,9 @@ import { WeaponFilters } from '../filters/WeaponFilters'
 import { ArtifactFilters } from '../filters/ArtifactFilters'
 import { EnemyFilters } from '../filters/EnemyFilters'
 import { MaterialFilters } from '../filters/MaterialFilters'
+import { NpcFilters } from '../filters/NpcFilters'
+import { AnimalFilters } from '../filters/AnimalFilters'
+import { TutorialFilters } from '../filters/TutorialFilters'
 
 export const axiosInstance = axios.create({
   baseURL: DefaultApiOptions.API,
@@ -58,6 +61,9 @@ export async function setLanguage (language: Language): Promise<void> {
   await ArtifactFilters.setFilterIds()
   await EnemyFilters.setFilterIds()
   await MaterialFilters.setFilterIds()
+  await NpcFilters.setFilterIds()
+  await AnimalFilters.setFilterIds()
+  await TutorialFilters.setFilterIds()
 }
 
 /**

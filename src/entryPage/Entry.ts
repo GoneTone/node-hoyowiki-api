@@ -35,6 +35,10 @@ import type { Page as WeaponPage } from '../interfaces/EntryPageDataWeaponAPIInt
 import type { Page as ArtifactPage } from '../interfaces/EntryPageDataArtifactAPIInterface'
 import type { Page as EnemyPage } from '../interfaces/EntryPageDataEnemyAPIInterface'
 import type { Page as MaterialPage } from '../interfaces/EntryPageDataMaterialAPIInterface'
+import type { Page as NpcPage } from '../interfaces/EntryPageDataNpcAPIInterface'
+import type { Page as AnimalPage } from '../interfaces/EntryPageDataAnimalAPIInterface'
+import type { Page as BookPage } from '../interfaces/EntryPageDataBookAPIInterface'
+import type { Page as TutorialPage } from '../interfaces/EntryPageDataTutorialAPIInterface'
 import { HoYoWikiAPIError } from '../errors/HoYoWikiAPIError'
 
 export class Entry {
@@ -43,9 +47,9 @@ export class Entry {
    *
    * @param {number} entryId Entry ID
    *
-   * @returns {Promise<CharacterPage | WeaponPage | ArtifactPage | EnemyPage | MaterialPage>}
+   * @returns {Promise<CharacterPage | WeaponPage | ArtifactPage | EnemyPage | MaterialPage | NpcPage | AnimalPage | BookPage | TutorialPage>}
    */
-  public async get (entryId: number): Promise<CharacterPage | WeaponPage | ArtifactPage | EnemyPage | MaterialPage> {
+  public async get (entryId: number): Promise<CharacterPage | WeaponPage | ArtifactPage | EnemyPage | MaterialPage | NpcPage | AnimalPage | BookPage | TutorialPage> {
     const response = await axiosInstance.get('/entry_page', {
       params: {
         entry_page_id: entryId
