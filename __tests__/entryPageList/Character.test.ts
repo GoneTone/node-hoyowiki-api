@@ -51,14 +51,14 @@ describe('Character', () => {
       const character = new Character()
       const result = await character.getList()
 
-      expect(result[0]?.name).toBe('Qiqi')
+      expect(result.reverse()[0]?.name).toBe('Qiqi')
     })
 
     test('Get character entry page data list "[0].entry_page_id", return "1"', async () => {
       const character = new Character()
       const result = await character.getList()
 
-      expect(result[0]?.entry_page_id).toBe('1')
+      expect(result.reverse()[0]?.entry_page_id).toBe('1')
     })
   })
 

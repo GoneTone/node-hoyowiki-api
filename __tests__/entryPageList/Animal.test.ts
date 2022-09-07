@@ -44,14 +44,14 @@ describe('Animal', () => {
       const animal = new Animal()
       const result = await animal.getList(AnimalFilters.Type.Fish)
 
-      expect(result[0]?.name).toBe('Formalo Ray')
+      expect(result.reverse()[0]?.name).toBe('Formalo Ray')
     })
 
     test('Get animal entry page data list "[0].entry_page_id", apply "Fish" filters, return "2357"', async () => {
       const animal = new Animal()
       const result = await animal.getList(AnimalFilters.Type.Fish)
 
-      expect(result[0]?.entry_page_id).toBe('2357')
+      expect(result.reverse()[0]?.entry_page_id).toBe('2357')
     })
   })
 

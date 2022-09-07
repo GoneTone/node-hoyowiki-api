@@ -44,14 +44,14 @@ describe('Material', () => {
       const material = new Material()
       const result = await material.getList(MaterialFilters.Type.Potion)
 
-      expect(result[0]?.name).toBe('Shocking Essential Oil')
+      expect(result.reverse()[0]?.name).toBe('Shocking Essential Oil')
     })
 
     test('Get material entry page data list "[0].entry_page_id", apply "Potion" filters, return "732"', async () => {
       const material = new Material()
       const result = await material.getList(MaterialFilters.Type.Potion)
 
-      expect(result[0]?.entry_page_id).toBe('732')
+      expect(result.reverse()[0]?.entry_page_id).toBe('732')
     })
   })
 

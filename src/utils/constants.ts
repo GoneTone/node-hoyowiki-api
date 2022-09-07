@@ -33,7 +33,8 @@
 
 export const enum DefaultApiOptions {
   API = 'https://sg-wiki-api.hoyolab.com/hoyowiki/wapi',
-  UserAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36'
+  UserAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36',
+  Referer = 'https://wiki.hoyolab.com'
 }
 
 export const enum EntryPageMenu {

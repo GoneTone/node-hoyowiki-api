@@ -44,14 +44,14 @@ describe('Enemy', () => {
       const enemy = new Enemy()
       const result = await enemy.getList()
 
-      expect(result[0]?.name).toBe('Childe')
+      expect(result.reverse()[0]?.name).toBe('Childe')
     })
 
     test('Get enemy entry page data list "[0].entry_page_id", return "2100"', async () => {
       const enemy = new Enemy()
       const result = await enemy.getList()
 
-      expect(result[0]?.entry_page_id).toBe('2100')
+      expect(result.reverse()[0]?.entry_page_id).toBe('2100')
     })
   })
 

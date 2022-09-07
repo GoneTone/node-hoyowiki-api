@@ -44,14 +44,14 @@ describe('Tutorial', () => {
       const tutorial = new Tutorial()
       const result = await tutorial.getList(TutorialFilters.Type.ImportantMessage)
 
-      expect(result[0]?.name).toBe('World Level Adjustment')
+      expect(result.reverse()[0]?.name).toBe('World Level Adjustment')
     })
 
     test('Get tutorial entry page data list "[0].entry_page_id", apply "ImportantMessage" filters, return "2594"', async () => {
       const tutorial = new Tutorial()
       const result = await tutorial.getList(TutorialFilters.Type.ImportantMessage)
 
-      expect(result[0]?.entry_page_id).toBe('2594')
+      expect(result.reverse()[0]?.entry_page_id).toBe('2594')
     })
   })
 

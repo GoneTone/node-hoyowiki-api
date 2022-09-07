@@ -44,14 +44,14 @@ describe('Npc', () => {
       const npc = new Npc()
       const result = await npc.getList(NpcFilters.Affiliation.Fatui)
 
-      expect(result[0]?.name).toBe('Ekaterina')
+      expect(result.reverse()[0]?.name).toBe('Ekaterina')
     })
 
     test('Get npc entry page data list "[0].entry_page_id", apply "Fatui" filters, return "2465"', async () => {
       const npc = new Npc()
       const result = await npc.getList(NpcFilters.Affiliation.Fatui)
 
-      expect(result[0]?.entry_page_id).toBe('2465')
+      expect(result.reverse()[0]?.entry_page_id).toBe('2465')
     })
   })
 

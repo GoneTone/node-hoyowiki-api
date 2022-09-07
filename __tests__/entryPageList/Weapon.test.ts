@@ -51,14 +51,14 @@ describe('Weapon', () => {
       const weapon = new Weapon()
       const result = await weapon.getList()
 
-      expect(result[0]?.name).toBe('"The Catch"')
+      expect(result.reverse()[0]?.name).toBe('"The Catch"')
     })
 
     test('Get weapon entry page data list "[0].entry_page_id", return "1930"', async () => {
       const weapon = new Weapon()
       const result = await weapon.getList()
 
-      expect(result[0]?.entry_page_id).toBe('1930')
+      expect(result.reverse()[0]?.entry_page_id).toBe('1930')
     })
   })
 

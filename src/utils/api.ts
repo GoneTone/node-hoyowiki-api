@@ -43,7 +43,8 @@ import { TutorialFilters } from '../filters/TutorialFilters'
 export const axiosInstance = axios.create({
   baseURL: DefaultApiOptions.API,
   headers: {
-    'User-Agent': DefaultApiOptions.UserAgent
+    'User-Agent': DefaultApiOptions.UserAgent,
+    referer: DefaultApiOptions.Referer
   }
 })
 axiosInstance.defaults.headers.common['x-rpc-language'] = Language.EnglishUS

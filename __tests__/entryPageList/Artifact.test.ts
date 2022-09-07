@@ -51,14 +51,14 @@ describe('Artifact', () => {
       const artifact = new Artifact()
       const result = await artifact.getList()
 
-      expect(result[0]?.name).toBe('Adventurer')
+      expect(result.reverse()[0]?.name).toBe('Adventurer')
     })
 
     test('Get artifact entry page data list "[0].entry_page_id", return "2061"', async () => {
       const artifact = new Artifact()
       const result = await artifact.getList()
 
-      expect(result[0]?.entry_page_id).toBe('2061')
+      expect(result.reverse()[0]?.entry_page_id).toBe('2061')
     })
   })
 

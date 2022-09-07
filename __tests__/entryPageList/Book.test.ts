@@ -44,14 +44,14 @@ describe('Book', () => {
       const book = new Book()
       const result = await book.getList()
 
-      expect(result[0]?.name).toBe('The Five Kasen\'s Splendor: Sumizome')
+      expect(result.reverse()[0]?.name).toBe('The Five Kasen\'s Splendor: Sumizome')
     })
 
     test('Get book entry page data list "[0].entry_page_id", return "2287"', async () => {
       const book = new Book()
       const result = await book.getList()
 
-      expect(result[0]?.entry_page_id).toBe('2287')
+      expect(result.reverse()[0]?.entry_page_id).toBe('2287')
     })
   })
 
